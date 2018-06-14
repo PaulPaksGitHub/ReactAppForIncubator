@@ -1,8 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import ReactDOM from 'react-dom'
+import React from 'react'
+import App from './App.js'
+import {HashRouter} from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+localStorage.setItem('logged', 'false');
+
+ReactDOM.render((
+  <HashRouter>
+    <App />
+  </HashRouter>
+), document.getElementById('site'))

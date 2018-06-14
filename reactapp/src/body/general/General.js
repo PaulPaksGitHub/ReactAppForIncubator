@@ -3,7 +3,7 @@ import React from 'react'
 const General = () => {
   return(
     <div>
-      <h1>Welcome to the Tornadoes Website!</h1>
+      <h1>Допро пожаловать на веб сайт!</h1>
     </div>
   )
 }

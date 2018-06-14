@@ -5,15 +5,14 @@ import General from './general/General.js'
 import News from './news/News.js'
 import Login from './login/Login.js'
 
-
 const Body = () => (
-  <main>
+  <div>
     <Switch>
       <Route exact path='/' component={General}/>
       <Route path='/news' component={News}/>
       <Route path='/profile' component={Profile}/>
       <Route path='/login' component={Login}/>
     </Switch>
-  </main>
+  </div>
 )
 export default Body;

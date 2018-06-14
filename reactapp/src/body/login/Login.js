@@ -20,9 +20,9 @@ class Login extends React.Component {
       this.forceUpdate();
     } else {
       if (this.state.login === 'Admin') {
-        this.setState({message: 'Wrong password'})
+        this.setState({message: 'Неверный пароль'})
       } else {
-        this.setState({message: 'Wrong login'})  
+        this.setState({message: 'Неизвестный логин'})
       }
     }
 
@@ -41,22 +41,23 @@ render(){
   }
   return (
     <div>
+      <h2>Авторизация</h2>
 			<form onSubmit={this.handleSubmit}>
 				<input
 					id="1"
 					type="text"
-					placeholder="Login"
+					placeholder="Логин"
 					value={this.state.login}
 					onChange={this.handleLoginChange}
 				/><br />
 				<input
 					id="2"
 					type="text"
-					placeholder="Password"
+					placeholder="Пароль"
 					value={this.state.pass}
 					onChange={this.handlePassChange}
 				/><br />
-        <button>submit</button>
+        <button>Войти</button>
 			</form>
       <h2>{this.state.message}</h2>
 		</div>

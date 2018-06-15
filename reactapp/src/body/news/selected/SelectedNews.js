@@ -1,6 +1,10 @@
 import {Link} from 'react-router-dom'
 import React from 'react'
 import NewsList from '../NewsList.js'
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button'
+import './noch.css'
 
 const SelectedNews = (props) => {
   const foundNew = NewsList.get(
@@ -11,9 +15,16 @@ const SelectedNews = (props) => {
   }
   return (
     <div>
-      <h1>{foundNew.header}</h1>
-      <p>{foundNew.text}</p>
-      <Link to='/news'>Back</Link>
+      <Paper elevation={4}>
+        <Typography variant="headline" component="h2">
+          {foundNew.header}
+        </Typography>
+
+        <Typography component="p">
+          {foundNew.text}
+        </Typography>
+        <Link to='/news' className="noch"><Button variant="text" color="inherit">Назад</Button></Link>
+      </Paper>
     </div>
   )
 }

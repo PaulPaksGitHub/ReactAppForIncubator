@@ -1,5 +1,12 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 class Login extends React.Component {
   constructor(props){
@@ -41,28 +48,30 @@ render(){
   }
   return (
     <div>
-      <h2>Авторизация</h2>
-			<form onSubmit={this.handleSubmit}>
-				<input
-					id="1"
-					type="text"
-					placeholder="Логин"
-					value={this.state.login}
-					onChange={this.handleLoginChange}
-				/><br />
-				<input
-					id="2"
-					type="text"
-					placeholder="Пароль"
-					value={this.state.pass}
-					onChange={this.handlePassChange}
-				/><br />
-        <button>Войти</button>
-			</form>
-      <h2>{this.state.message}</h2>
-		</div>
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography variant="title" color="primary">
+            Авторизация
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <FormControl >
+        <InputLabel htmlFor="login">Login</InputLabel>
+        <Input id="login" value={this.state.login} onChange={this.handleLoginChange} />
+      </FormControl><br/>
+
+      <FormControl >
+        <InputLabel htmlFor="pass">Password</InputLabel>
+        <Input id="pass" value={this.state.pass} onChange={this.handlePassChange} />
+      </FormControl><br/>
+
+      <Button onClick={this.handleSubmit} variant="text" color="primary">Войти</Button>
+      <h4>{this.state.message}</h4>
+    </div>
     )
   }
 }
+
 
 export default Login;

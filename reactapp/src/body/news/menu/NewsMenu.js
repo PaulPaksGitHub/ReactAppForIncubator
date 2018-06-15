@@ -12,9 +12,11 @@ const NewsMenu = () => (
     <List component="nav">
       {
         NewsList.all().map(n => (
-          <ListItem button>
-            <Link to={`/news/${n.id}`} className="noch"><ListItemText primary={n.header} /></Link>
-          </ListItem>
+          <Link to={`/news/${n.id}`} className="noch">
+            <ListItem button>
+              <ListItemText primary={n.header} />
+            </ListItem>
+          </Link>
         ))
       }
     </List>

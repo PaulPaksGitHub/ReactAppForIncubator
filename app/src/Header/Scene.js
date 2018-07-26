@@ -10,7 +10,6 @@ import { inject, observer } from 'mobx-react';
 @observer
 export default class extends React.Component{
   render(){
-    console.log(this.props.store.isUserLogged)
     return(
       <div>
         <AppBar position="static" color="default">
@@ -18,7 +17,7 @@ export default class extends React.Component{
             <Typography variant="title" color="default">
               <Link to='/'><Button variant="text" color="inherit" >Home</Button></Link>
               <Link to='/login'><Button variant="text" color="inherit" >Profile</Button></Link>
-
+              <Link to='/news'><Button variant="text" color="inherit" >News</Button></Link>
             </Typography>
           </Toolbar>
         </AppBar>

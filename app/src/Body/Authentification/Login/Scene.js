@@ -27,7 +27,7 @@ export default class extends React.Component {
 
     handleSubmit(event){
         if (this.state.login === 'Admin' && this.state.pass === '12345'){
-        this.props.store.login();
+            this.props.store.login();
         } else {
         if (this.state.login === 'Admin') {
             this.setState({message: 'Неверный пароль'})

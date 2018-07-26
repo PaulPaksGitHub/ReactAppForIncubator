@@ -1,13 +1,23 @@
 import React from 'react'
-import Header from './header/Header.js'
-import Body from './body/Body.js'
+import Header from './Header'
+import Body from './Body'
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <Body />
-    </div>
-  )
-}
-export default App;
+import {HashRouter} from 'react-router-dom'
+
+import { Provider } from 'mobx-react'
+import store from './store/store.js'
+
+export default class App extends React.Component{
+  render(){
+    return(
+      <Provider store={store}>
+        <HashRouter>
+          <div>
+            <Header />
+            <Body />
+          </div>
+        </HashRouter>
+      </Provider>
+    )
+  }
+} 
